@@ -1,3 +1,5 @@
+import { SalesItem } from "../Sales/SalesTypes";
+
 export interface SalesLedger {
     id: number;
     mobile: string;
@@ -6,5 +8,5 @@ export interface SalesLedger {
     address: string;
     invoiceDate: Date;
     GSTN: string;
-    // items: SalesItem[]
+    items: SalesItem[]
   }

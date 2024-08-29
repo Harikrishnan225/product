@@ -19,14 +19,15 @@ function SalesLedgerList() {
       setSalesLedger(data);
     };
     getSalesLedgerData();
+  }, []);
 
+  useEffect(() => {
     const getSalesItemData = async () => {
       const data = await getSalesItem();
       setSalesList(data);
     };
     getSalesItemData();
-  }, [salesLedger, salesItem]);
-
+  }, []);
   const handleEdit = (id: number) => {
     navigate(`/salesledger/edit/${id}`);
   };
@@ -81,30 +82,30 @@ function SalesLedgerList() {
                   <td>
                     <table className="table table-bordered">
                       <thead>
-                      <tr>
-                              <th>Id</th>
-                              <th>Sales Ledger Id</th>
-                              <th>Product Id</th>
-                              <th>Qty</th>
-                              <th>GST</th>
-                              <th>Total</th>
-                              <th>Discount</th>
-                              <th>Subtotal</th>
-                            </tr>
+                        <tr>
+                          <th>Id</th>
+                          <th>Sales Ledger Id</th>
+                          <th>Product Id</th>
+                          <th>Qty</th>
+                          <th>GST</th>
+                          <th>Total</th>
+                          <th>Discount</th>
+                          <th>Subtotal</th>
+                        </tr>
                       </thead>
                       <tbody>
                         {salesItem.length > 0 ? (
                           salesItem.map((sales) => (
                             <tr>
                               <td>{sales.id}</td>
-                            <td>{sales.sales_ledger_id}</td>
-                            <td>{sales.product_id}</td>
-                            <td>{sales.qty}</td>
-                            <td>{sales.gst}</td>
-                            <td>{sales.total}</td>
-                            <td>{sales.discount}</td>
-                            <td>{sales.subtotal}</td>
-                          </tr>
+                              <td>{sales.sales_ledger_id}</td>
+                              <td>{sales.product_id}</td>
+                              <td>{sales.qty}</td>
+                              <td>{sales.gst}</td>
+                              <td>{sales.total}</td>
+                              <td>{sales.discount}</td>
+                              <td>{sales.subtotal}</td>
+                            </tr>
                           ))
                         ) : (
                           <tr>

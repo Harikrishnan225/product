@@ -15,6 +15,9 @@ function Home() {
             <NavLink to="/purchaseledgerlist">Purchase Ledger</NavLink>
           </li>
           <li>
+            <NavLink to="/purchaseitemslist">PurchaseItem</NavLink>
+          </li>
+          <li>
             <NavLink to="/saleslist">Sales</NavLink>
           </li>
           <li>

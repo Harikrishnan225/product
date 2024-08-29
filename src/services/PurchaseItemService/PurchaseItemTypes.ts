@@ -1,8 +1,9 @@
 export interface PurchaseItems {
-    purchaseLedgerId: number;
-    productId: number;
+  id: number;
+    purchase_ledger_id: number;
+    product_id: number;
     qty: number;
-    GST: number;
+    gst: number;
     total: number;
     discount: number;
     subtotal: number;

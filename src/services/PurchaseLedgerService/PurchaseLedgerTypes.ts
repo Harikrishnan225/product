@@ -1,7 +1,7 @@
 export interface PurchaseLedger {
     id: number;
-    supplierId: number;
-    invoiceDate: string;
-    GSTN: string;
+    supplier_id: number;
+    invoice_date: string;
+    gstn: string;
   }
   

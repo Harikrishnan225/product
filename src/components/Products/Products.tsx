@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { ProductForm } from "../../services/ProductService/ProductTypes";
 import { createProduct } from "../../services/ProductService/ProductService";
 import { useNavigate } from "react-router-dom";
@@ -38,7 +38,7 @@ function Products() {
     });
   };
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       console.log(productForm);
@@ -92,9 +92,9 @@ function Products() {
               onChange={handleChange}
             >
               <option selected>Select Qty Type</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              <option value="grams">Grams</option>
+              <option value="liters">Liters</option>
+              <option value="packets">Packets</option>
             </select>
           </div>
           <div className="form-group col-md-6">
@@ -106,7 +106,7 @@ function Products() {
               name="qtytype"
               id="productqtyType"
               className="form-control mb-3"
-              value={productForm.qtytype}
+              value={productForm.qty}
               onChange={handleChange}
             />
           </div>

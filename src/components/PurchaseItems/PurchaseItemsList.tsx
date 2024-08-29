@@ -31,7 +31,7 @@ function PurchaseItemsList() {
         await deletePurchaseItem(id);
         setPurchaseItemsList(
           purchaseitemslist.filter(
-            (purchaseItem) => purchaseItem.purchaseLedgerId !== id
+            (purchaseItem) => purchaseItem.purchase_ledger_id !== id
           )
         );
       } catch (error) {}
@@ -62,10 +62,11 @@ function PurchaseItemsList() {
           <tbody>
             {purchaseitemslist.length > 0 ? (
               purchaseitemslist.map((purchaseitemslist) => (
-                <tr key={purchaseitemslist.purchaseLedgerId}>
-                  <td>{purchaseitemslist.purchaseLedgerId}</td>
-                  <td>{purchaseitemslist.productId}</td>
-                  <td>{purchaseitemslist.GST}</td>
+                <tr key={purchaseitemslist.id}>
+                  <td>{purchaseitemslist.id}</td>
+                  <td>{purchaseitemslist.purchase_ledger_id}</td>
+                  <td>{purchaseitemslist.product_id}</td>
+                  <td>{purchaseitemslist.gst}</td>
                   <td>{purchaseitemslist.qty}</td>
                   <td>{purchaseitemslist.discount}</td>
                   <td>{purchaseitemslist.subtotal}</td>
@@ -75,17 +76,17 @@ function PurchaseItemsList() {
                       <>
                         <button
                           className="btn btn-primary me-3"
-                          onClick={() => handleEdit(
-                            purchaseitemslist.purchaseLedgerId
-                          )}
+                          onClick={() =>
+                            handleEdit(purchaseitemslist.purchase_ledger_id)
+                          }
                         >
                           <i className="bi bi-pencil me-2"></i>Edit
                         </button>
                         <button
                           className="btn btn-danger"
-                          onClick={() => handleDelete(
-                            purchaseitemslist.purchaseLedgerId
-                          )}
+                          onClick={() =>
+                            handleDelete(purchaseitemslist.purchase_ledger_id)
+                          }
                         >
                           <i className="bi bi-trash me-2"></i>Delete
                         </button>

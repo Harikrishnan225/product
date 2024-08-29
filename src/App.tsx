@@ -55,6 +55,7 @@ function App() {
           <Route path="/sales/edit/:id" element={<SalesEdit />} />
           <Route path="/salesledger/edit/:id" element={<SalesLedgerEdit />} />
           <Route path="/supplier/edit/:id" element={<SupplierEdit />} />
+          <Route path="/purchaseitemslist" element={<PurchaseItemsList/>}/>
         </Routes>
       </header>
     </div>
